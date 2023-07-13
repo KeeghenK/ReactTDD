@@ -1,6 +1,5 @@
 ![Security Checks](https://github.com/KeeghenK/ReactTDD/actions/workflows/codeql-analysis.yml/badge.svg)
 ![React Tests](https://github.com/KeeghenK/ReactTDD/actions/workflows/node.js.yml/badge.svg)
-![Cypress Tests](https://github.com/KeeghenK/ReactTDD/actions/workflows/cypress.yml/badge.svg)
 
 ## Usage
 
@@ -42,7 +41,7 @@ At the bottom of the `.eslintrc.json` file `"react/react-in-jsx-scope": "off"` i
 
 To run [ESLint](https://eslint.org/) run the command `npm run lint`. [ESLint](https://eslint.org/) can also automatically fix problems by running `npm run lint:fix`.
 
-If you are using [VSCode](https://code.visualstudio.com/) adding the ESLint (dbaeumer.vscode-eslint) plugin provides live feedback as you are writing code.  Faster feedback loops help team members learn team style guidelines faster and avoid delays while committing.
+If you are using [VSCode](https://code.visualstudio.com/) adding the ESLint (dbaeumer.vscode-eslint) plugin provides live feedback as you are writing code. Faster feedback loops help team members learn team style guidelines faster and avoid delays while committing.
 
 ## Credentials Check
 
@@ -55,9 +54,10 @@ To run [Secretlint](https://github.com/secretlint/secretlint) run the command `n
 [ESLint](https://eslint.org/)'s auto fix command reformats your files to fit the configured [ESLint](https://eslint.org/) rules. [Prettier](https://prettier.io/) provides configurable coding style rules. [Prettier](https://prettier.io/) rules are configured in the `.prettierrc` file at the root of this repository. By running the command `npm run lint:fix` the [Prettier](https://prettier.io/) rules will be included in the [ESLint](https://eslint.org/) formatting rules. It's important that teams have clear coding standards and libraries like [Prettier](https://prettier.io/) can help teams configure and adhere to their own standards.
 
 ## Testing Pyramid
-Products that are [test driven](https://en.wikipedia.org/wiki/Test-driven_development) have lower [defect](https://en.wikipedia.org/wiki/Software_bug) rates.  Teams that distribute test coverage according to the [testing pyramid](https://martinfowler.com/bliki/TestPyramid.html) build products that are easier to change.  The `App.test.js` test uses the [React Test Renderer](https://reactjs.org/docs/test-renderer.html) which uses the [React](https://reactjs.org/) framework to render a [Component](https://reactjs.org/docs/react-component.html).  The use of [React Test Renderer](https://reactjs.org/docs/test-renderer.html) [integrates](https://martinfowler.com/bliki/IntegrationTest.html) the framework's rendering capabilities with the plain `App.js` component.  Therefore, this test fits in the middle of the pyramid.  These tests are a bit slower and more costly to maintain than completely isolated [unit tests](https://martinfowler.com/bliki/UnitTest.html) at the bottom of the [testing pyramid](https://martinfowler.com/bliki/TestPyramid.html).  
 
-[Cypress](https://www.cypress.io/) tests fit at the top of the [testing pyramid](https://martinfowler.com/bliki/TestPyramid.html).  They are the slowest to run and the most expensive to write, run and maintain.  Nevertheless, these tests are vital for the success of any healthy product.  Teams should limit these tests to 5 - 10 of the most common [happy paths](https://en.wikipedia.org/wiki/Happy_path) through the product.  To run [Cypress](https://www.cypress.io/) test open a terminal window and run `npm start` to start the application.  Once the application is started, open a second terminal window and run `npm run cypress:run`.  If you wish to use the [Cypress Launchpad](https://docs.cypress.io/guides/getting-started/opening-the-app) run `npm run cypress:open` instead.
+Products that are [test driven](https://en.wikipedia.org/wiki/Test-driven_development) have lower [defect](https://en.wikipedia.org/wiki/Software_bug) rates. Teams that distribute test coverage according to the [testing pyramid](https://martinfowler.com/bliki/TestPyramid.html) build products that are easier to change. The `App.test.js` test uses the [React Test Renderer](https://reactjs.org/docs/test-renderer.html) which uses the [React](https://reactjs.org/) framework to render a [Component](https://reactjs.org/docs/react-component.html). The use of [React Test Renderer](https://reactjs.org/docs/test-renderer.html) [integrates](https://martinfowler.com/bliki/IntegrationTest.html) the framework's rendering capabilities with the plain `App.js` component. Therefore, this test fits in the middle of the pyramid. These tests are a bit slower and more costly to maintain than completely isolated [unit tests](https://martinfowler.com/bliki/UnitTest.html) at the bottom of the [testing pyramid](https://martinfowler.com/bliki/TestPyramid.html).
+
+[Cypress](https://www.cypress.io/) tests fit at the top of the [testing pyramid](https://martinfowler.com/bliki/TestPyramid.html). They are the slowest to run and the most expensive to write, run and maintain. Nevertheless, these tests are vital for the success of any healthy product. Teams should limit these tests to 5 - 10 of the most common [happy paths](https://en.wikipedia.org/wiki/Happy_path) through the product. To run [Cypress](https://www.cypress.io/) test open a terminal window and run `npm start` to start the application. Once the application is started, open a second terminal window and run `npm run cypress:run`. If you wish to use the [Cypress Launchpad](https://docs.cypress.io/guides/getting-started/opening-the-app) run `npm run cypress:open` instead.
 
 ## Code Coverage
 
@@ -67,13 +67,13 @@ Code coverage verification can be useful for teams to identify test coverage hol
 
 This repository uses the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/). By default [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) is configured to use [Jest](https://jestjs.io/) under the hood. Within [Jest](https://jestjs.io/), [test coverage thresholds](https://jestjs.io/docs/configuration#coveragethreshold-object) are set in the `jest.config.js` file at the root of this repository.
 
-[Cypress](https://www.cypress.io/) tests are not included in code coverage metrics.  End-to-end, full-stack integration tests often touch significant amounts of code without providing the level of coverage that thoughtful unit or integration tests provide lower in the testing pyramid.  While they serve a crucial role in holistic testing, they don't contribute to test coverage calculations.
+[Cypress](https://www.cypress.io/) tests are not included in code coverage metrics. End-to-end, full-stack integration tests often touch significant amounts of code without providing the level of coverage that thoughtful unit or integration tests provide lower in the testing pyramid. While they serve a crucial role in holistic testing, they don't contribute to test coverage calculations.
 
 ## Checks Before Committing
 
 This template uses [Husky](https://typicode.github.io/husky) to verify the code before it’s committed to [git](https://git-scm.com/). The `.husky/pre-commit` file is run before a `git commit` is completed. This file configures and runs coding style, test coverage, and security check verifications prior to committing code to git.
 
-[Git](https://git-scm.com/) only commits [staged](https://githowto.com/staging_and_committing) files. If [Husky](https://typicode.github.io/husky) reformatted all files whether they were [staged](https://githowto.com/staging_and_committing), or not, it would frequently change files that were not [staged](https://githowto.com/staging_and_committing).  These unstaged files would fail to be committed. To solve this problem, [Husky](https://typicode.github.io/husky) uses the [lint-staged](https://github.com/okonet/lint-staged) library to only run formatting rules against staged files. The commands that are run with [lint-staged](https://github.com/okonet/lint-staged) library are configured in the `.lintstagedrc.json` file at the root of this repository.
+[Git](https://git-scm.com/) only commits [staged](https://githowto.com/staging_and_committing) files. If [Husky](https://typicode.github.io/husky) reformatted all files whether they were [staged](https://githowto.com/staging_and_committing), or not, it would frequently change files that were not [staged](https://githowto.com/staging_and_committing). These unstaged files would fail to be committed. To solve this problem, [Husky](https://typicode.github.io/husky) uses the [lint-staged](https://github.com/okonet/lint-staged) library to only run formatting rules against staged files. The commands that are run with [lint-staged](https://github.com/okonet/lint-staged) library are configured in the `.lintstagedrc.json` file at the root of this repository.
 
 To run [lint-staged](https://github.com/okonet/lint-staged) run the command `npm run lint-staged`.
 
@@ -85,9 +85,10 @@ Before each commit, [Husky](https://typicode.github.io/husky) runs 5 commands:
 4. `npm run secretlint` - checks for secrets within the code
 5. `npm run audit` - checks for package vulnerabilities
 
-Note: [Cypress](https://www.cypress.io/) tests are not run by [Husky](https://typicode.github.io/husky) prior to a commit because they are slow.  Once your code is pushed up to GitHub, the [Cypress](https://www.cypress.io/) tests will be run as part of the [GitHub Actions](https://docs.github.com/en/actions) [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) build.
+Note: [Cypress](https://www.cypress.io/) tests are not run by [Husky](https://typicode.github.io/husky) prior to a commit because they are slow. Once your code is pushed up to GitHub, the [Cypress](https://www.cypress.io/) tests will be run as part of the [GitHub Actions](https://docs.github.com/en/actions) [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) build.
 
 ## Continuous Integration Builds
+
 This template uses [GitHub Actions](https://docs.github.com/en/actions) to run [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) builds after each push and pull request within GitHub.
 
 - `.github/workflows/codeql-analysis.yml` sets up [code scanning](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning) for your repository.
