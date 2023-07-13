@@ -1,6 +1,6 @@
-![Security Checks](https://github.com/pairing4good/react-18-project-template/actions/workflows/codeql-analysis.yml/badge.svg)
-![React Tests](https://github.com/pairing4good/react-18-project-template/actions/workflows/node.js.yml/badge.svg)
-![Cypress Tests](https://github.com/pairing4good/react-18-project-template/actions/workflows/cypress.yml/badge.svg)
+![Security Checks](https://github.com/KeeghenK/ReactTDD/actions/workflows/codeql-analysis.yml/badge.svg)
+![React Tests](https://github.com/KeeghenK/ReactTDD/actions/workflows/node.js.yml/badge.svg)
+![Cypress Tests](https://github.com/KeeghenK/ReactTDD/actions/workflows/cypress.yml/badge.svg)
 
 ## Usage
 
