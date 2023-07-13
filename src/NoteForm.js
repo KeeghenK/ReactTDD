@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
 function NoteForm(props) {
   const { notes, setFormDataCallback, formData, setNotesCallback } = props;
+
+  function createNote() {
+    if (!formData.name || !formData.description) return;
+    setNotesCallback([...notes, formData]);
+  }
+
   return (
     <div>
       <input
@@ -23,10 +29,7 @@ function NoteForm(props) {
         }
         placeholder="Note Description"
       />
-      <button
-        data-testid="note-form-submit"
-        type="button"
-        onClick={() => setNotesCallback([...notes, formData])}>
+      <button data-testid="note-form-submit" type="button" onClick={createNote}>
         Create Note
       </button>
     </div>
