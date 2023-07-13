@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 function NoteForm(props) {
   const { notes, setFormDataCallback, formData, setNotesCallback } = props;
 
