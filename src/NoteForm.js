@@ -5,6 +5,7 @@ function NoteForm(props) {
   function createNote() {
     if (!formData.name || !formData.description) return;
     setNotesCallback([...notes, formData]);
+    setFormDataCallback({ name: '', description: '' });
   }
 
   return (

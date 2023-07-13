@@ -2,10 +2,18 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import NoteForm from '../NoteForm';
 
 const setNotesCallback = jest.fn();
+const setFormDataCallback = jest.fn();
 const formData = { name: '', description: '' };
 
 beforeEach(() => {
-  render(<NoteForm notes={[]} setNotesCallback={setNotesCallback} formData={formData} />);
+  render(
+    <NoteForm
+      notes={[]}
+      setNotesCallback={setNotesCallback}
+      setFormDataCallback={setFormDataCallback}
+      formData={formData}
+    />
+  );
 });
 
 test('should display a create note button', () => {
@@ -59,10 +67,22 @@ test('should require description when name provided', () => {
 test('should add a new note when name and description are provided', () => {
   formData.description = 'test description';
   formData.name = 'test name';
+  const button = screen.getByTestId('note-form-submit');
+  fireEvent.click(button);
+
+  expect(setNotesCallback.mock.calls.length).toBe(1);
+});
+
+test('should reset the form after a note is saved', () => {
+  formData.name = 'test name';
+  formData.description = 'test description';
 
   const button = screen.getByTestId('note-form-submit');
 
   fireEvent.click(button);
 
-  expect(setNotesCallback.mock.calls.length).toBe(1);
+  expect(setFormDataCallback).toHaveBeenCalledWith({
+    name: '',
+    description: ''
+  });
 });
