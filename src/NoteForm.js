@@ -18,6 +18,7 @@ function NoteForm(props) {
             name: e.target.value
           })
         }
+        value={formData.name}
         placeholder="Note Name"
       />
       <input
@@ -28,6 +29,7 @@ function NoteForm(props) {
             description: e.target.value
           })
         }
+        value={formData.description}
         placeholder="Note Description"
       />
       <button data-testid="note-form-submit" type="button" onClick={createNote}>
