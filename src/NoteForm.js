@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
-
 function NoteForm(props) {
   const { notes, setFormDataCallback, formData, setNotesCallback } = props;
-
   return (
     <div>
       <input
@@ -31,12 +29,6 @@ function NoteForm(props) {
         onClick={() => setNotesCallback([...notes, formData])}>
         Create Note
       </button>
-      {notes.map((note, index) => (
-        <div>
-          <p data-testid={`test-name-${index}`}>{note.name}</p>
-          <p data-testid={`test-description-${index}`}>{note.description}</p>
-        </div>
-      ))}
     </div>
   );
 }
