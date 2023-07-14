@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import NoteForm from '../NoteForm';
+import NoteForm from '../note/NoteForm';
 
 const setNotesCallback = jest.fn();
 const setFormDataCallback = jest.fn();
@@ -67,7 +67,9 @@ test('should require description when name provided', () => {
 test('should add a new note when name and description are provided', () => {
   formData.description = 'test description';
   formData.name = 'test name';
+
   const button = screen.getByTestId('note-form-submit');
+
   fireEvent.click(button);
 
   expect(setNotesCallback.mock.calls.length).toBe(1);
