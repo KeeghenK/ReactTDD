@@ -1,0 +1,21 @@
+{
+    "appName": "reacttdd",
+    "roleName": "pinpointLambdaRoled8135626",
+    "cloudformationPolicyName": "cloudformationPolicyd8135626",
+    "cloudWatchPolicyName": "cloudWatchPolicyd8135626",
+    "pinpointPolicyName": "pinpointPolicyd8135626",
+    "authPolicyName": "pinpoint_amplify_d8135626",
+    "unauthPolicyName": "pinpoint_amplify_d8135626",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

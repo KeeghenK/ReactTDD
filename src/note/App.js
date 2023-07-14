@@ -52,6 +52,7 @@ function App() {
                 formData={formData}
                 setFormDataCallback={setFormData}
                 setNotesCallback={createNote}
+                username={user.username}
               />
             </Col>
           </Row>

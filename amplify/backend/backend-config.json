@@ -1,4 +1,10 @@
 {
+  "analytics": {
+    "reacttdd": {
+      "providerPlugin": "awscloudformation",
+      "service": "Pinpoint"
+    }
+  },
   "api": {
     "reacttdd": {
       "dependsOn": [],
