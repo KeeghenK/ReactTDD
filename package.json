@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "aws-amplify": "^5.3.4",
+    "aws-amplify": "^5.3.8",
     "bootstrap": "^5.3.0",
     "cypress-localstorage-commands": "^2.2.3",
     "eslint-config-prettier": "^8.8.0",
